@@ -23,7 +23,7 @@ hc keybind $Mod-Shift-q quit
 hc keybind $Mod-Shift-r reload
 hc keybind $Mod-c close
 hc keybind $Mod-Return spawn alacritty -e fish &
-hc keybind $Mod-space spawn rofi -show drun &
+hc keybind $Mod-space spawn rofi -show drun -show-icons &
 hc keybind Mod4-Shift-s spawn flameshot gui
 
 # basic movement in tiling and floating mode
@@ -154,10 +154,13 @@ xrandr --output DVI-D-0 --mode 1366x768
 hc set_monitors 1920x1080+0+0 1366x768+1920+0
 # or simply:
 
-feh --bg-fill --randomize ~/wallpapers/*
+# feh --bg-fill --randomize ~/wallpapers/*
+feh --bg-fill ~/wallpapers/111955.jpg
 
 #!/usr/bin/env sh
 xmodamap ~/.Xmodmap
 killall -q  polybar
 polybar -c ~/.config/herbstluftwm/polybar.ini mybar &
 echo "Bars launched..."
+picom &
+echo "Picom launched..."
